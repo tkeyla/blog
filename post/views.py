@@ -1,10 +1,10 @@
-from django.shortcuts import render, redirect
-from django.contrib.auth.models import User
+from django.db.models.query import QuerySet
+from django.shortcuts import render
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.views.generic import CreateView
+from django.views.generic import CreateView, ListView
 from django.urls import reverse_lazy
 from .templates import *
-from .forms import *
+
 from .models import *
 
 def principal(request):
@@ -20,19 +20,6 @@ class CrearPost(LoginRequiredMixin, CreateView):
         form.instance.autor = self.request.user
         return super().form_valid(form)
 
-
-def crear_usuario(request):
-    if request.method == 'POST':
-        form = SignUp(request.POST)
-        if form.is_valid():
-            username = form.cleaned_data['username']
-            email = form.cleaned_data['email']
-            password = form.cleaned_data['password']
-            User.objects.create_user(username, email, password)
-            return redirect('login')
-    else:
-        form = SignUp()
-        return render(request, 'registration/registro.html', {'form':form})
 
 
 
