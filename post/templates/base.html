@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{%block title%}{%endblock%}</title>
+        <!-- {%load static%}
+        <link rel="stylesheet" href="{% static 'mensajes/styles.css' %}">-->
+        {%block script%}{%endblock%}
+    </head>
+    <body>
+        <header>
+            <h2>Poliglotips</h2>
+            <nav>
+                <ul>
+                    <li><a href="{%url 'home'%}">Principal</a></li>
+                    <li><a href="">Crear post</a></li>
+                    {%if user.is_authenticated%}
+                        <li><a href="">Cerrar sesión</a></li>
+                    {%else%}
+                        <li><a href="">Log In</a></li>
+                        <li><a href="">Registrarse</a></li>
+                    {%endif%}
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <div class="content">
+                {%block content%}
+                {%endblock%}
+            </div>
+        </main>
+    </body>
+</html>
