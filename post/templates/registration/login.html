@@ -11,6 +11,8 @@
         {%csrf_token%}
         {{form.as_p}}
         <button type="submit">Iniciar sesión</button>
+        <p>Todavía no tenes una cuenta?</p>
+        <button><a href="{%url 'registro'%}">Registrarse</button></a></button>
     </form>
 </body>
 </html>
