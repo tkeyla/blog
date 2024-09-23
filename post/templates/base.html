@@ -16,10 +16,10 @@
                     <li><a href="{%url 'home'%}">Principal</a></li>
                     <li><a href="">Crear post</a></li>
                     {%if user.is_authenticated%}
-                        <li><a href="">Cerrar sesión</a></li>
+                        <li><a href="{%url 'logout'%}">Cerrar sesión</a></li>
                     {%else%}
-                        <li><a href="">Log In</a></li>
-                        <li><a href="">Registrarse</a></li>
+                        <li><a href="{%url 'login'%}">Log In</a></li>
+                        <li><a href="{%url 'registro'%}">Registrarse</a></li>
                     {%endif%}
                 </ul>
             </nav>
