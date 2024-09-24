@@ -14,7 +14,7 @@ TableroMensajes es un proyecto simple que se desarrolló para practicar el uso d
     3. Navega por el sitio usando la barra de navegación o navbar
 
 ## Usuarios existentes
-User: keyla - contraseña: sushi
-User: pepe - contraseña: pepepepe
-User: mario - contraseña: pepepepe
+. User: keyla - contraseña: sushi
+. User: pepe - contraseña: pepepepe
+. User: mario - contraseña: pepepepe
 
