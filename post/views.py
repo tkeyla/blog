@@ -31,6 +31,7 @@ class VerPosteos(ListView):
             return Post.objects.filter(autor__id=autor)
         else:
             return Post.objects.all()
+        
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['form'] = SeleccionarAutor(self.request.GET or None)  
@@ -49,12 +50,13 @@ def ver_detalle(request, id):
     post = Post.objects.get(id=id)
     return render(request, 'ver_post.html', {'post':post})
 
-class EliminarMensaje(LoginRequiredMixin, DeleteView):
+class EliminarPost(LoginRequiredMixin, DeleteView):
     model = Post
     template_name = 'confirmar_eliminacion.html'
     success_url = reverse_lazy('mis_posteos')
 
     def get_queryset(self):
-        id = self.request.GET.get('id')
-        return Post.objects.get(id=id)
+        pk = self.kwargs['pk']
+        print(pk)
+        return Post.objects.filter(pk=pk)
 

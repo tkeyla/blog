@@ -4,4 +4,7 @@
     <h1>{{post.titulo}}</h1>
     <span>{{post.autor__username}} - {{post.fecha_publicacion}}</span>
     <p>{{post.contenido}}</p>
+    {%if post.autor == user%}
+        <button><a href="{%url 'eliminar_post' pk=post.id%}">Eliminar post</a></button>
+    {%endif%}
 {%endblock%}

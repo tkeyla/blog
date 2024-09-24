@@ -3,7 +3,7 @@
         <div>
             <h2>{{post.titulo}}</h2>
             <span>{{post.autor.username}} - {{post.fecha_publicacion}}</span>
-            <button><a href="{%url 'ver_post' id=post.id%}">Leer mas</a></button>
+            <a href="{%url 'ver_post' id=post.id%}">Leer mas</a>
         </div>
     {%endfor%}
 {%else%}
