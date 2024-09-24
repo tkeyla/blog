@@ -13,8 +13,9 @@ TableroMensajes es un proyecto simple que se desarrolló para practicar el uso d
     2. Busca en el navegador http://127.0.0.1:8000/
     3. Navega por el sitio usando la barra de navegación o navbar
 
-## Usuarios existentes
-. User: keyla - contraseña: sushi
-. User: pepe - contraseña: pepepepe
-. User: mario - contraseña: pepepepe
+## Usuarios existentes:
+
+1. User: keyla - contraseña: sushi
+2. User: pepe - contraseña: pepepepe
+3. User: mario - contraseña: pepepepe
 
