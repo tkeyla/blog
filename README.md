@@ -1,5 +1,5 @@
 ## Introducción
-TableroMensajes es un proyecto simple que se desarrolló para practicar el uso de vistas basadas en clases,formularios, herencia y modularización de plantillas. Su funcionalidad es simple, sirve para guardar mensajes de texto, mostrarlos, eliminarlos y crearlos.
+Poliglotips es un proyecto simple de tipo blog que se desarrolló para practicar el uso de vistas basadas en clases,formularios, herencia y modularización de plantillas, utilización del middleware y las vistas genericas, así como también las operaciones CRUD. Su funcionalidad es simple, sirve para crear, ver, editar y eliminar publicaciones de un blog.
 
 ## Instalación:
     1. Clona el repositorio: git clone https://github.com/tkeyla/blog.git
