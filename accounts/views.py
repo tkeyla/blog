@@ -14,3 +14,5 @@ def crear_usuario(request):
     else:
         form = SignUp()
         return render(request, 'registration/registro.html', {'form':form})
+
+        
