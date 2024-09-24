@@ -7,5 +7,6 @@ urlpatterns = [
     path('verposteos/<str:autor>', VerPosteos.as_view(), name='ver_posteos'),
     path('misposteos', VerPosteosCreados.as_view(), name='mis_posteos'),
     path('post/<int:id>', ver_detalle, name='ver_post'),
-    path('post/eliminar/<int:pk>', EliminarPost.as_view(), name='eliminar_post')
+    path('post/eliminar/<int:pk>', EliminarPost.as_view(), name='eliminar_post'),
+    path('post/editar/<int:pk>', EditarPost.as_view(), name='editar_post')
 ]

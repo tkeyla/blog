@@ -1,7 +1,7 @@
 from django.db.models.query import QuerySet
 from django.shortcuts import render
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.views.generic import CreateView, ListView, DeleteView
+from django.views.generic import CreateView, ListView, DeleteView, UpdateView
 from django.urls import reverse_lazy
 from .templates import *
 from .forms import *
@@ -14,7 +14,7 @@ class CrearPost(LoginRequiredMixin, CreateView):
     model = Post
     fields = ['titulo', 'contenido']
     template_name = 'crear_post.html'
-    success_url = reverse_lazy('home')
+    success_url = reverse_lazy('mis_posteos')
 
     def form_valid(self, form):
         form.instance.autor = self.request.user
@@ -55,8 +55,8 @@ class EliminarPost(LoginRequiredMixin, DeleteView):
     template_name = 'confirmar_eliminacion.html'
     success_url = reverse_lazy('mis_posteos')
 
-    def get_queryset(self):
-        pk = self.kwargs['pk']
-        print(pk)
-        return Post.objects.filter(pk=pk)
-
+class EditarPost(LoginRequiredMixin, UpdateView):
+    model = Post
+    fields = ['titulo', 'contenido']
+    template_name = 'editar_post.html'
+    success_url = reverse_lazy('mis_posteos')
