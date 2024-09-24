@@ -1,0 +1,11 @@
+{%if posteos%}
+    {%for post in posteos%}
+        <div>
+            <h2>{{post.titulo}}</h2>
+            <span>{{post.autor.username}} - {{post.fecha_publicacion}}</span>
+            <button><a href="{%url 'ver_post' id=post.id%}">Leer mas</a></button>
+        </div>
+    {%endfor%}
+{%else%}
+    <h3>No hay posteos!</h3>
+{%endif%}

@@ -1,0 +1,10 @@
+{%extends "base.html"%}
+{%block title%} Explorar {%endblock%}
+{%block content%}
+    <h1>Explora todos los posteos en nuestro blog!</h1>
+    <form method="GET" action="{% url 'ver_posteos' 'todos' %}">
+        {{ form.as_p }}
+        <button type="submit">Filtrar por autor</button>
+    </form>
+    {%include "listar_posteos.html"%}
+{%endblock%}
