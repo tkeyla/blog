@@ -2,9 +2,9 @@
 {%block title%} Crear nuevo post {%endblock%}
 {%block content%}
     <h1>Crea un nuevo post!</h1>
-    <form method="POST">
+    <form method="POST" class="post-form">
         {%csrf_token%}
-        {{form.as_p}}
+        {{form.as_ul}}
         <button type="submit">Publicar</button>
     </form>
 {%endblock%}

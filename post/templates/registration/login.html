@@ -4,15 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Iniciar sesión</title>
+    {%load static%}
+    <link rel="stylesheet" href="{% static 'post/styles.css' %}">
 </head>
 <body>
-    <h1>Iniciar sesión</h1>
-    <form method="POST">
-        {%csrf_token%}
-        {{form.as_p}}
-        <button type="submit">Iniciar sesión</button>
-        <p>Todavía no tenes una cuenta?</p>
-        <button><a href="{%url 'registro'%}">Registrarse</button></a></button>
-    </form>
+    <div class="accounts-form"> 
+        <h1>Iniciar sesión</h1>
+        <form method="POST">
+            {%csrf_token%}
+            {{form.as_ul}}
+            <button type="submit">Iniciar sesión</button>
+            <p>Todavía no tenes una cuenta?</p>
+            <button><a href="{%url 'registro'%}">Registrarse</button></a></button>
+        </form>
+    </div>
+
 </body>
 </html>

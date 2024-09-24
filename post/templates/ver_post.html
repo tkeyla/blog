@@ -1,9 +1,9 @@
 {%extends "base.html"%}
 {%block title%} Poliglotips - {{post.titulo}}{%endblock%}
 {%block content%}
-    <h1>{{post.titulo}}</h1>
-    <span>{{post.autor__username}} - {{post.fecha_publicacion}}</span>
-    <p>{{post.contenido}}</p>
+    <h1 id="titulo-detalle">{{post.titulo|capfirst}}</h1>
+    <span class="fecha-creacion">{{post.autor.username|capfirst}} - {{post.fecha_publicacion}}</span>
+    <p>{{post.contenido|capfirst}}</p>
     {%if post.autor == user%}
     <button><a href="{%url 'editar_post' pk=post.id%}">Editar post</a></button>
         <button><a href="{%url 'eliminar_post' pk=post.id%}">Eliminar post</a></button>

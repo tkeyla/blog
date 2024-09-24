@@ -1,8 +1,8 @@
 {%if posteos%}
     {%for post in posteos%}
-        <div>
-            <h2>{{post.titulo}}</h2>
-            <span>{{post.autor.username}} - {{post.fecha_publicacion}}</span>
+        <div class="posteo-item-lista">
+            <h2>{{post.titulo|capfirst}}</h2>
+            <span>{{post.autor.username|capfirst}} - {{post.fecha_publicacion}}</span>
             <a href="{%url 'ver_post' id=post.id%}">Leer mas</a>
         </div>
     {%endfor%}
